@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>被撕掉的日记 | 新手推理ARG</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📓 被撕掉的日记</h1>
+            <p class="subtitle">一个更完整的新手推理故事</p>
+        </header>
+
+        <!-- 序章 -->
+        <section id="level-0" class="level active">
+            <div class="card">
+                <h2>序章 · 空荡的书桌</h2>
+                <div class="story">
+                    <p>你是高三学生，今天早上来到教室，发现同桌林夏的座位空着。</p>
+                    <p>她的抽屉里只剩下一本被撕了好几页的日记，和一张皱巴巴的便利贴。</p>
+                    <p>便利贴上写着：</p>
+                    <blockquote>
+                        「别告诉老师。真相在日记里，但有些页被我撕掉了。<br>
+                        如果你真的想知道，就从源代码开始。」
+                    </blockquote>
+                    <p>你打开日记，第一页只剩半句话：「我决定去……」</p>
+                </div>
+                <p class="hint">💡 提示：查看本页源代码，找到她决定去的地方。</p>
+                <div class="input-group">
+                    <input type="text" id="password-0" placeholder="她决定去哪里？（两个字）">
+                    <button onclick="checkLevel0()">开始调查</button>
+                </div>
+                <p id="msg-0" class="message"></p>
+            </div>
+        </section>
+
+        <!-- 第一幕 -->
+        <section id="level-1" class="level">
+            <div class="card">
+                <h2>第一幕 · 日记碎片</h2>
+                <div class="story">
+                    <p>你在日记夹层里找到三张被撕下来的碎片，内容分别是：</p>
+                    <div class="clue-list">
+                        <p><strong>碎片A：</strong>「周一晚上，我在天台看到了那个人。」</p>
+                        <p><strong>碎片B：</strong>「周日下午，我第一次收到匿名短信。」</p>
+                        <p><strong>碎片C：</strong>「周二早上，我把行李偷偷放进储物柜。」</p>
+                    </div>
+                    <p>请按<strong>时间先后顺序</strong>排列这三张碎片。</p>
+                </div>
+                <p class="hint">💡 用字母表示，例如 BAC</p>
+                <div class="input-group">
+                    <input type="text" id="password-1" placeholder="输入顺序（如 ABC）">
+                    <button onclick="checkLevel1()">确认顺序</button>
+                </div>
+                <p id="msg-1" class="message"></p>
+            </div>
+        </section>
+
+        <!-- 第二幕 -->
+        <section id="level-2" class="level">
+            <div class="card">
+                <h2>第二幕 · 三个说法</h2>
+                <div class="story">
+                    <p>你私下问了三个同学，他们说法不同：</p>
+                    <div class="clue-list">
+                        <p><strong>班长：</strong>「林夏最近在准备竞赛，可能去外地参加比赛了。」</p>
+                        <p><strong>好友小周：</strong>「她和家里人吵架了，应该是离家出走。」</p>
+                        <p><strong>后排同学：</strong>「我看到她周一晚上天台和人说话，气氛很紧张。」</p>
+                    </div>
+                    <p>结合日记碎片，你认为<strong>谁的话最不可信</strong>？</p>
+                </div>
+                <div class="options">
+                    <button class="option-btn" onclick="checkLevel2('班长')">班长</button>
+                    <button class="option-btn" onclick="checkLevel2('小周')">好友小周</button>
+                    <button class="option-btn" onclick="checkLevel2('后排同学')">后排同学</button>
+                </div>
+                <p id="msg-2" class="message"></p>
+            </div>
+        </section>
+
+        <!-- 第三幕 -->
+        <section id="level-3" class="level">
+            <div class="card">
+                <h2>第三幕 · 储物柜的线索</h2>
+                <div class="story">
+                    <p>你找到了林夏的储物柜。里面没有行李，只剩一张纸条：</p>
+                    <div class="puzzle-box">
+                        <p>「密码是我生日倒过来写。」</p>
+                        <p class="big-text">她的生日是 2008年5月13日</p>
+                    </div>
+                    <p>请算出四位数字密码（月日倒序）。</p>
+                </div>
+                <p class="hint">💡 5月13日 → 倒过来是什么？</p>
+                <div class="input-group">
+                    <input type="text" id="password-3" placeholder="输入四位数字">
+                    <button onclick="checkLevel3()">打开纸条</button>
+                </div>
+                <p id="msg-3" class="message"></p>
+            </div>
+        </section>
+
+        <!-- 第四幕 -->
+        <section id="level-4" class="level">
+            <div class="card">
+                <h2>第四幕 · 真正的目的</h2>
+                <div class="story">
+                    <p>纸条打开后，写着：</p>
+                    <blockquote>
+                        「我不是离家出走，也不是去比赛。<br>
+                        我去找一个人——那个周一晚上在天台等我的人。<br>
+                        他是我失散多年的哥哥。」
+                    </blockquote>
+                    <p>现在你已经知道她去了「上海」，也知道真正的原因。</p>
+                    <p>最后确认：林夏离开学校的主要原因是什么？</p>
+                </div>
+                <div class="options">
+                    <button class="option-btn" onclick="checkLevel4('比赛')">去参加竞赛</button>
+                    <button class="option-btn" onclick="checkLevel4('吵架')">和家里吵架出走</button>
+                    <button class="option-btn" onclick="checkLevel4('哥哥')">去见失散的哥哥</button>
+                </div>
+                <p id="msg-4" class="message"></p>
+            </div>
+        </section>
+
+        <!-- 结局 -->
+        <section id="level-final" class="level">
+            <div class="card treasure">
+                <h2>结局 · 完整的故事</h2>
+                <div class="story ending">
+                    <p>你把所有线索拼在一起：</p>
+                    <p>周日，林夏第一次收到匿名短信，内容是关于她失散的哥哥。</p>
+                    <p>周一晚上，她在天台见到了对方，确认了身份。</p>
+                    <p>周二早上，她把行李放进储物柜，准备离开。</p>
+                    <p>她没有告诉任何人真实原因，只是留下了被撕掉的日记和提示，希望真正关心她的人能自己找到答案。</p>
+                    <p class="final-line">有些秘密不是为了隐瞒，只是还没准备好说出口。</p>
+                </div>
+                <div class="treasure-box">
+                    <p class="big-text">✨ 你完成了这次完整的推理 ✨</p>
+                    <p>故事比上一个更长，线索也更多。<br>你已经能跟着叙事一步步拼出真相了。</p>
+                    <hr>
+                    <button onclick="restart()">重新阅读这本日记</button>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>有故事的新手推理ARG · 更完整的版本 · 纯前端</p>
+        </footer>
+    </div>
+
+    <!-- 林夏决定去：上海 -->
+    <script src="script.js"></script>
+</body>
+</html>
